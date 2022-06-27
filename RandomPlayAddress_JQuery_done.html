@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Play Online Fixed</title>
+    <link rel="stylesheet" href="https://drive.google.com/uc?export=view&id=1J6Q2LCtOw7H_38yxGBjruh-tboFjodtJ">
+    <!-- <script src="https://drive.google.com/uc?export=view&id=1p0AcVHXNBEsfuChZaE4ScMyqW4jv1_Hg"></script> -->
+    <script src="./jq/jquery-3.6.0.js"></script>
+    <style>
+        div>textarea {
+            width: 75% !important;
+        }
+
+        #putCenter {
+            margin-right: 10%;
+            margin-left: 10%;
+            width: 80%;
+        }
+
+        #nameList {
+            margin-left: 12%;
+        }
+
+        body {
+            /* background-image: url(https://drive.google.com/uc?export=view&id=1p0AcVHXNBEsfuChZaE4ScMyqW4jv1_Hg); */
+            background-color: rgba(207, 238, 71, 0.2);
+            background-blend-mode: multiply;
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- <form action=""> -->
+    <div class="mb-3 col-12 border border-1" id="putCenter">
+        <label for="nameList " class="form-label col-12 text-center bg-light
+        ">參賽名單</label>
+        <textarea class="form-control" id="nameList" rows="10" cols="30"></textarea>
+        <button type="submit" class="btn btn-primary" onclick="getNameList()">Submit</button>
+        <!-- <button onclick="changeFontSize()">Bigger</button>
+        <button onclick="MinimizeFontSize()">Smaller</button> -->
+        <button onclick="classFontSizeBigger()">Bigger</button>
+        <button onclick="classFontSizeSmaller()">Smaller</button>
+    </div>
+
+    <!-- </form> -->
+
+    <div class="container col-12 bg-light ">
+        <div class="row ">
+            <div class="col-4 bg-warning border-top border-end border-dark border-1" id="Id0"></div>
+            <div class=" col-4  text-end border-bottom border-dark border-1" id="tee"></div>
+            <div class=" col-4 border-top border-start border-dark border-1 text-end" id="Id2"></div>
+        </div>
+        <div class="row">
+            <div class="col-4 bg-warning border-bottom border-end border-dark border-1 " id="Id1"></div>
+            <div class=" col-4  text-end " id="tee"></div>
+            <div class="col-4  border-bottom border-start border-dark border-1 text-end" id="Id3"></div>
+        </div>
+        <br><br>
+        <div class="row">
+            <div class="col-4 border-top border-end border-dark border-1" id="Id4"></div>
+            <div class=" col-4  text-end border-bottom border-dark border-1" id="tee"></div>
+            <div class="col-4 bg-warning border-top border-start border-dark border-1 text-end" id="Id6"></div>
+        </div>
+        <div class="row">
+            <div class="col-4 border-bottom border-end border-dark border-1" id="Id5"></div>
+            <div class=" col-4  text-end " id="tee"></div>
+            <div class="col-4  bg-warning border-bottom border-start border-dark border-1 text-end" id="Id7"></div>
+        </div>
+        <br><br>
+        <div class="row">
+            <div class="col-4 bg-warning border-top border-end border-dark border-1" id="Id8"></div>
+            <div class=" col-4  text-end border-bottom border-dark border-1" id="tee"></div>
+            <div class="col-4 border-top border-start border-dark border-1 text-end" id="Id10"></div>
+        </div>
+        <div class="row">
+            <div class="col-4 bg-warning border-bottom border-end border-dark border-1" id="Id9"></div>
+            <div class=" col-4  text-end" id="tee"></div>
+            <div class="col-4  border-bottom border-start border-dark border-1 text-end" id="Id11"></div>
+        </div>
+        <br><br>
+        <div class="row">
+            <div class="col-4  border-top border-end border-dark border-1" id="Id12"></div>
+            <div class=" col-4  text-end border-bottom border-dark border-1" id="tee"></div>
+            <div class="col-4 bg-warning border-top border-start border-dark border-1 text-end" id="Id14"></div>
+        </div>
+        <div class="row">
+            <div class="col-4 border-bottom border-end border-dark border-1" id="Id13"></div>
+            <div class=" col-4  text-end" id="tee"></div>
+            <div class="col-4 bg-warning border-bottom border-start border-dark border-1 text-end" id="Id15">
+            </div>
+        </div>
+        <br><br>
+        <div class="row">
+            <div class="col-4 bg-warning border-top border-end border-dark border-1" id="Id16"></div>
+            <div class=" col-4  text-end border-bottom border-dark border-1" id="tee"></div>
+            <div class="col-4 border-top border-start border-dark border-1 text-end" id="Id18"></div>
+        </div>
+        <div class="row">
+            <div class="col-4 bg-warning border-bottom border-end border-dark border-1" id="Id17"></div>
+            <div class=" col-4  text-end " id="tee"></div>
+            <div class="col-4 border-bottom border-start border-dark border-1 text-end" id="Id19"></div>
+        </div>
+        <br><br>
+        <div class="row">
+            <div class="col-4  border-top border-end border-dark border-1" id="Id20"></div>
+            <div class=" col-4  text-end border-bottom border-dark border-1" id="tee"></div>
+            <div class="col-4 bg-warning border-top border-start border-dark border-1 text-end" id="Id22">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4 border-bottom border-end border-dark border-1" id="Id21"></div>
+            <div class=" col-4  text-end" id="tee"></div>
+            <div class="col-4 bg-warning border-bottom border-start border-dark border-1 text-end" id="Id23">
+            </div>
+        </div>
+
+        <br>
+    </div>
+
+
+    <script>
+        function getNameList() {
+            //V2取得textarea的值
+            var rawNameList = $('#nameList').val();
+            var nameSplit = rawNameList.split("\n");
+            var randomArr = makeRandomNum();
+            var IdArr = [];
+
+            //JQuery Version
+            for (let i = 0; i < 24; i++) {
+                $(`#Id${i}`).html(`${nameSplit[randomArr[i]]}`);
+            }
+        }
+
+        //已經改成這個效能比較好的
+        function makeRandomNum() {
+            var temp = [];
+            for (var i = 0; i < 24; i++) {
+                temp.push(i);
+            }
+            var randomArr = [];
+            for (var i = 0; i < 24; i++) {
+                randomNum = Math.floor(Math.random() * temp.length);
+                randomArr.push(temp[randomNum]);
+                temp.splice(randomNum, 1);
+            }
+            return randomArr;
+        }
+
+        function MinimizeFontSize() {
+            console.log("MinimizeFontSize() Triggered");
+
+            var elm = document.getElementById('one');
+            var temp = window.getComputedStyle(elm).getPropertyValue('font-size');
+            document.getElementById('one').style.fontSize = (parseInt(temp) - 2) + 'px';
+        }
+
+        function classFontSizeBigger() {
+            console.log("classFontSizeBigger() Triggered");
+            $('div>div').css('font-size', '+=2');
+        }
+
+        function classFontSizeSmaller() {
+            console.log("classFontSizeSmaller() Triggered");
+            $('div>div').css('font-size', '-=2');
+        }
+
+    </script>
+</body>
+
+</html>
